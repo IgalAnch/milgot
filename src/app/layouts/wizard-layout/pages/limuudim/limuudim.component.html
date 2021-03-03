@@ -1,0 +1,65 @@
+<div class="limuudim">
+    <div class="_notice" [style.display]="noticeText">
+        <div class="_notice__background"></div>
+        <div class="_notice__text">
+            <div class="header">
+                במסך זה מוצגים שדות למילוי פרטיכם האישיים, יש למלא את כל השדות.
+            </div>                    
+            <div class="content">
+                שימו לב, אם יצאתם מהטופס ולא בצעתם שמירה הנתונים ימחקו מהמערכת.
+            </div>
+        </div>
+        <div class="hide" (click)="hidePopup()">הסתר</div>
+    </div>
+    <div class="wedge">
+        <div class="topic-title">
+            לימודים
+        </div>
+        <div class="buttons">
+            <button class="save" type="form">שמירה</button>
+            <button class="save-and-continue" (click)="ok()">שמור והמשך</button>
+        </div>
+    </div>
+    <div class="content" style="height: 400px;">
+
+
+        <div class="right" style="height: 170px;">
+            <div class="title">
+                עיסוק הסטודנט
+            </div>
+            <div class="weirdWedge" style="width: 100%; height: 8px;"></div>
+            <div class="form row">
+                <div class="col-md-3 texts">
+                    <div class="text" style="height: 35px">
+                        <div class="text-content">סוג</div>
+                    </div>
+                    <div class="text" style="height: 35px">
+                        <div class="text-content">גובה השכר</div>
+                    </div>
+                </div>
+                <div class="col-md-9 inputs">
+                    <div class="input2" style="height: 35px;">
+                        <select name="kindOfJob" [(ngModel)]="kindOfJob">
+                            <option value="" disabled="disabled" selected="selected"><div>  - בחר אחת מן האפשרויות -  </div></option>
+                            <option value="freelancer-no-pay-vacation"><div>שכיר שיצא לחל"ת</div></option>
+                            <option value="independent"><div>עצמאי</div></option>
+                            <option value="unemployed"><div>מובטל</div></option>
+                        </select>
+                    </div>
+                    <div class="input2" style="height: 35px;">
+                        <select name="pay" [(ngModel)]="pay">
+                            <option value="" disabled="disabled" selected="selected"><div>  - בחר אחת מן האפשרויות -  </div></option>
+                            <option value="lessThan6K"><div>עד 6000 ברוטו</div></option>
+                            <option value="between6Kto10K"><div>מ6 עד 10 ברוטו</div></option>
+                            <option value="over10K"><div>מעל 10 ברוטו</div></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="vertical-wedge"></div>
+        <div class="left" style="height: 170px;">
+        </div>
+    </div>
+</div> 

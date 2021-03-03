@@ -1,0 +1,7 @@
+
+<div [routerLink]="tab.path" class="arrow" [style.width]="tab.width+'%'">
+    <div class="arrow-before"></div>
+    {{tab.name}}
+    <div *ngIf="!first" class="arrow-after"></div>
+</div>
+<div class="arrow-wedge" style="display: inline-block; width:20px;"></div>

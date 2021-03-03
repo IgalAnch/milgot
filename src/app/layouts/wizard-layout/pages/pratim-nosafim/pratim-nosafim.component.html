@@ -1,0 +1,218 @@
+<div class="pratim-nosafim">
+    <form>
+        <div class="_notice" [style.display]="noticeText">
+            <div class="_notice__background"></div>
+            <div class="_notice__text">
+                <div class="header">
+                    במסך זה מוצגים שדות למילוי פרטיכם האישיים, יש למלא את כל השדות.
+                </div>                    
+                <div class="content">
+                    שימו לב, אם יצאתם מהטופס ולא בצעתם שמירה הנתונים ימחקו מהמערכת.
+                </div>
+            </div>
+            <div class="hide" (click)="hidePopup()">הסתר</div>
+        </div>
+        <div class="wedge">
+            <div class="topic-title">
+                מצב משפחתי
+            </div>
+            <div class="buttons">
+                <button class="save" type="form">שמירה</button>
+                <button class="save-and-continue" (click)="ok()">שמור והמשך</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="right-first">
+                <!-- <div class="title">בית המגורים הקבוע של הסטודנט</div> -->
+                <div class="_wedge"></div>
+                <div class="_wedge"></div>
+                <div class="_wedge"></div>
+                <div class="form">
+                    <div class="texts">
+                        <div class="text">בית המגורים הקבוע של הסטודנט</div>
+                        <div class="text" *ngIf="selectedValue=='bachelor'">שכירות</div>
+
+                        <div class="text" *ngIf="selectedValue=='bachelor_parents'">עד גיל 18</div>
+                        <div class="text" *ngIf="selectedValue=='bachelor_parents'">מעל גיל 18</div>
+                        
+                        <div class="text" *ngIf="selectedValue=='married_divorced'">שכירות</div>
+                        <div class="text" *ngIf="selectedValue=='married_divorced'">ילדים</div>
+                    </div>
+                    <div class="inputs">
+                        <div class="input1">
+                            <select name="housing" [(ngModel)]="selectedValue">
+                                <option value="" disabled="disabled" selected="selected">  - בחר אחת מן האפשרויות -  </option>
+                                <option value="bachelor">רווק - גר לבד</option>
+                                <option value="bachelor_parents">רווק גר עם ההורים</option>
+                                <option value="married_divorced">נשוי/גרוש</option>
+                            </select>
+                        </div>
+                        <div class="input2" *ngIf="selectedValue=='bachelor'">
+                            <input  type="radio" name="somename" style="display: inline"/><span>שוכר</span>
+                            <input  type="radio" name="somename" style="display: inline"/><span>משכנתא</span>
+                            <input  type="radio" name="somename" style="display: inline;"/><span>אחר</span>
+                        </div>
+
+                        <div class="input1" *ngIf="selectedValue=='bachelor_parents'">
+                            <input value="" ngModel name="brothers_below_18">
+                            
+                        </div>
+                        <div class="input1" *ngIf="selectedValue=='bachelor_parents'">
+                            <input value="" ngModel name="brothers_over_18">
+                            
+                        </div>
+
+                        <div class="input2" *ngIf="selectedValue=='married_divorced'">
+                            <input  type="radio" name="somename" style="display: inline"/><span>שוכר</span>
+                            <input  type="radio" name="somename" style="display: inline"/><span>משכנתא</span>
+                            <input  type="radio" name="somename" style="display: inline"/><span>אחר</span>
+                        </div>
+                        <div class="input1" *ngIf="selectedValue=='married_divorced'">
+                            <input value="" ngModel name="kids">
+                        </div>
+
+                        <!-- <div class="input1">
+                            <input value="" ngModel name="idNumber">
+                        </div> -->
+                        <!-- <div class="input1">
+                            <input value="" ngModel name="firstName">
+                        </div>
+                        <div class="input1">
+                            <input value="" ngModel name="lastName">
+                        </div>
+                        <div class="input1">
+                            <input value="" ngModel name="previousLastName">
+                        </div> -->
+                        <!-- <div class="input1" >
+                            <input value="" ngModel name="birthYear">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-wedge"></div>
+            <div class="left"></div>
+        </div>
+
+        <div class="c-wedge"></div>
+
+        <div class="content-second">
+            <div class="right-second">
+                <div class="title">פרטי האם</div>
+                <div class="_wedge"></div>
+                <div class="form">
+                    <div class="texts">
+                        <div class="text">שם מלא של האם</div>
+                        <div class="text">תאריך לידה</div>
+                        <div class="text">מצב אישי</div>
+                        <div class="text">עיסוק</div>
+                        <div class="text">מגבלה רפואית</div>
+                        <div class="text">לא בקשר עם האם</div>
+                    </div>
+                    <div class="inputs">
+                        <!-- <div class="input1">
+                            <select>
+                                <option value="" disabled="disabled" selected="selected"></option>
+                                <option value="1">רווק - גר לבד</option>
+                                <option value="2">רווק גר עם ההורים</option>
+                                <option value="2">נשוי/גרוש</option>
+                            </select>
+                        </div> -->
+                        <div class="input1">
+                            <input value="" ngModel name="idNumber">
+                        </div>
+                        <div class="input1">
+                            <input value="" ngModel name="firstName">
+                        </div>
+                        <div class="input3">
+                            <select name="husband_marriegeStatus">
+                                <option value="" disabled="disabled" selected="selected">  - בחר/י אחד -  </option>
+                                <option value="married">נשוי</option>
+                                <option value="divorced">גרוש</option>
+                                <option value="widow">אלמן</option>
+                                <option value="late">נפטר</option>
+                            </select>
+                        </div>
+                        <div class="input1">
+                            <input value="" ngModel name="previousLastName">
+                        </div>
+                        <div class="input1">
+                            <input value="" ngModel name="previousLastName">
+                        </div>
+                        <div class="input1" >
+                            <input value="" ngModel name="birthYear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-wedge"></div>
+            <div class="left-second"></div>
+        </div>
+
+        <div class="c-wedge"></div>
+
+
+        <div class="content-third">
+            <div class="right-third">
+                <div class="title">פרטי האב</div>
+                <div class="_wedge"></div>
+                <div class="form">
+                    <div class="texts">
+                        <div class="text">שם מלא של האב</div>
+                        <div class="text">תאריך לידה</div>
+                        <div class="text">מצב אישי</div>
+                        <div class="text">עיסוק</div>
+                        <div class="text">מגבלה רפואית</div>
+                        <div class="text">לא בקשר עם האם</div>
+                    </div>
+                    <div class="inputs">
+                        <!-- <div class="input1">
+                            <select>
+                                <option value="" disabled="disabled" selected="selected"></option>
+                                <option value="1">רווק - גר לבד</option>
+                                <option value="2">רווק גר עם ההורים</option>
+                                <option value="2">נשוי/גרוש</option>
+                            </select>
+                        </div> -->
+                        <div class="input1">
+                            <input value="" ngModel name="idNumber">
+                        </div>
+                        <div class="input1">
+                            <input value="" ngModel name="firstName">
+                        </div>
+                        <div class="input3">
+                            <select name="husband_marriegeStatus">
+                                <option value="" disabled="disabled" selected="selected">  - בחר/י אחד -  </option>
+                                <option value="married">נשוי</option>
+                                <option value="divorced">גרוש</option>
+                                <option value="widow">אלמן</option>
+                                <option value="late">נפטר</option>
+                            </select>
+                        </div>
+                        <div class="input1">
+                            <select name="husband_occupation">
+                                <option value="" disabled="disabled" selected="selected">  - בחר/י אחד - -  </option>
+                                <option value="full_time">שכיר משרה מלאה</option>
+                                <option value="part_time">שכיר משרה חלקית</option>
+                                <option value="independent">עצמאי</option>
+                                <option value="unemployed">לא עובד</option>
+                            </select>
+                        </div>
+                        <div class="input1">
+                            <select name="husband_occupation">
+                                <option value="" disabled="disabled" selected="selected">  - בחר/י אחד -  </option>
+                                <option value="handicap_over50">מוכר מעל 50 אחוז</option>
+                                <option value="handicap_below50">מוכר מתחת ל50 אחוז</option>
+                            </select>
+                        </div>
+                        <div class="input1" >
+                            <input value="" ngModel name="birthYear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-wedge"></div>
+            <div class="left-third"></div>  
+        </div>
+
+    </form>
+</div>

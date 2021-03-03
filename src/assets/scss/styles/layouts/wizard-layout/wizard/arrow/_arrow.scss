@@ -1,0 +1,60 @@
+div.arrow{
+    cursor: pointer;
+    display:inline-block;
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 38px;
+    margin: 15px 0;
+    position: relative;
+    height: 38px;
+    background-color: #004e6f;
+    text-align: center;
+
+    outline: none;
+}
+
+div.arrow-before, div.arrow-after{
+    content: "";
+    border-style: solid;
+    border-width: 0;
+    height: 0;
+    position: absolute;
+    width: 0;
+    display: inline-block;
+}
+
+div.arrow-before{
+    left: -19px;
+    border-width: 19px 19px 19px 0px;
+    border-color: transparent #004e6f;
+}
+
+
+div.arrow-after{
+    right: -19px;
+    border-width: 19px 19px 19px 0px;
+    border-color: #004e6f transparent;
+}
+
+/*focus*/ //replace with activeroute
+div.arrow:focus{
+    background-color: #103146;
+    div.arrow-after{
+        border-color: #103146 transparent;
+    }
+    div.arrow-before{
+        border-color: transparent #103146;
+    }
+}
+
+/*hover highlight*/
+div.arrow:hover{
+    background-color: #416277;
+    div.arrow-after{
+        border-color: #416277 transparent;
+    }
+    div.arrow-before{
+        border-color: transparent #416277;
+    }
+}
+

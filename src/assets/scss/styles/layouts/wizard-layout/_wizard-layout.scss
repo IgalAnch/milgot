@@ -1,0 +1,11 @@
+@import "./wizard/wizard";
+
+@import "./pages/pages";
+
+
+.wrapper{
+    > *{
+        font-family: Arial;
+        width: 100%;
+    }
+}

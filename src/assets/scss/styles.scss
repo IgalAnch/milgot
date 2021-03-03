@@ -1,0 +1,26 @@
+.outer-wrapper {
+    padding-left: 250px; padding-right: 250px;
+    direction: rtl;
+    
+    /*!!!!!!!!!!!!!!!!!!!*/
+    /*!!!!!!!!!!!!!!!!!!!*/ vertical-align: top; /*MAKE SURE THIS DOESNT BREAK THE APP*/
+    /*!!!!!!!!!!!!!!!!!!!*/
+}
+
+// Core CSS
+
+//..<-mixins //<-variables
+
+@import "variables.scss"; /*empty*/
+
+@import "mixins/mixins.scss"; /*empty*/
+
+
+@import "styles/header/header";
+
+@import "styles/layouts/layouts";
+
+
+// Fancy Stuff
+
+

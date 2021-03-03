@@ -1,0 +1,14 @@
+.wizard{
+    font-family:'Courier New', Courier, monospace;
+    
+    .overhead {
+        img.logo-img {height:100px; display: block}
+    }
+
+    .wizard__arrows {
+        @import "arrow/arrow";
+    }
+}
+
+
+
