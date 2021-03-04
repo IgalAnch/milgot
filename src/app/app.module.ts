@@ -9,6 +9,8 @@ import { WizardModule } from './layouts/wizard-layout/wizard/wizard.module';
 import { SharedModule } from './sharedmodule/shared.module';
 import { GraphQLModule } from './graphql.module';
 
+const k = 5;
+
 @NgModule({
   imports: [
     AppRoutingModule,
@@ -24,3 +26,4 @@ import { GraphQLModule } from './graphql.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+//sup hommie
