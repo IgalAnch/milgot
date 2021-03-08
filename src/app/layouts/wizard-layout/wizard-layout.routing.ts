@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { LimuudimComponent } from './pages/limuudim/limuudim.component';
-import { PratimNosafimComponent } from './pages/pratim-nosafim/pratim-nosafim.component';
-import { MismahimComponent } from './pages/mismahim/mismahim.component';
-import { NoModuleComponent } from './pages/nomodule/nomodule.component';
-import { FormsModule } from '@angular/forms';
-import { NoModulesModule } from './pages/nomodule/nomodule.module';
+// import { LimuudimComponent } from './pages/limuudim/limuudim.component';
+// import { PratimNosafimComponent } from './pages/pratim-nosafim/pratim-nosafim.component';
+// import { MismahimComponent } from './pages/mismahim/mismahim.component';
+// import { NoModuleComponent } from './pages/nomodule/nomodule.component';
+// import { FormsModule } from '@angular/forms';
+// import { NoModulesModule } from './pages/nomodule/nomodule.module';
 
 export const WizardLayoutRoutes: Routes = [
   {
@@ -40,10 +40,10 @@ export const WizardLayoutRoutes: Routes = [
   },
   {
     path: 'nomodule',
-    component: NoModuleComponent,
-    // loadChildren: () =>
-    //   import('./pages/nomodule/nomodule.module').then(
-    //     (file) => file.NoModulesModule
-    //   ),
+    // component: NoModuleComponent,
+    loadChildren: () =>
+      import('./pages/nomodule/nomodule.module').then(
+        (file) => file.NoModulesModule
+      ),
   },
 ];

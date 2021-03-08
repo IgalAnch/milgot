@@ -4,12 +4,26 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { WizardLayoutComponent } from './layouts/wizard-layout/wizard-layout.component';
+import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: 'student',
+  //   pathMatch: 'full',
+  // },
   {
     path: '',
-    redirectTo: 'student',
-    pathMatch: 'full',
+    component: LoginLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./layouts/login-layout/login-layout.module').then(
+            (m) => m.LoginLayoutModule
+          ),
+      },
+    ],
   },
   {
     path: 'student',
@@ -26,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'student',
+    redirectTo: '',
   },
 ];
 

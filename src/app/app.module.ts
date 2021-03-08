@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { WizardModule } from './layouts/wizard-layout/wizard/wizard.module';
 import { SharedModule } from './sharedmodule/shared.module';
 import { GraphQLModule } from './graphql.module';
+import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 
 const k = 5;
 
@@ -21,7 +22,7 @@ const k = 5;
     SharedModule.forRoot(),
     GraphQLModule,
   ],
-  declarations: [AppComponent, WizardLayoutComponent],
+  declarations: [AppComponent, WizardLayoutComponent, LoginLayoutComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
