@@ -5,7 +5,7 @@ import { AppComponent } from '../../../../app.component';
 
 @Component({
   selector: 'app-pratim',
-  templateUrl: './pratim2.component.html',
+  templateUrl: './pratim.component.html',
   styleUrls: ['./pratim.component.scss'],
 })
 export class PratimComponent implements OnInit {

@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const LoginLayoutRoutes: Routes = [
   {
-    path: 'landing',
+    path: '',
     loadChildren: () =>
       import('./pages/landing/landing.module').then(
         (file) => file.LandingModule

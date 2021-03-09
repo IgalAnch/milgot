@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { PratimNosafimComponent } from './pratim-nosafim.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 const pratimNosafimRoutes: Routes = [
   { path: '', component: PratimNosafimComponent },
@@ -10,10 +9,6 @@ const pratimNosafimRoutes: Routes = [
 
 @NgModule({
   declarations: [PratimNosafimComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule.forChild(pratimNosafimRoutes),
-  ],
+  imports: [FormsModule, RouterModule.forChild(pratimNosafimRoutes)],
 })
-export class PratimNosafimModule {}
+export class LimuudimModule {}

@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { WizardModule } from './wizard/wizard.module';
 import { NoModuleComponent } from './pages/nomodule/nomodule.component';
 import { SharedModule } from '../../sharedmodule/shared.module';
+import { WizardLayoutService } from './wizard-layout.service';
 
 @NgModule({
   imports: [
@@ -16,5 +17,6 @@ import { SharedModule } from '../../sharedmodule/shared.module';
     SharedModule.forRoot(),
   ],
   declarations: [],
+  providers: [],
 })
 export class WizardLayoutModule {}

@@ -18,16 +18,16 @@ export const WizardLayoutRoutes: Routes = [
       import('./pages/pratim/pratim.module').then((file) => file.PratimModule),
   },
   {
-    path: 'family-information',
+    path: 'family-status',
     loadChildren: () =>
-      import('./pages/pratim-nosafim/pratim-nosafim.module').then(
-        (file) => file.PratimNosafimModule
+      import('./pages/family-status/family-status.module').then(
+        (file) => file.FamilyStatusModule
       ),
   },
   {
     path: 'more-details',
     loadChildren: () =>
-      import('./pages/limuudim/limuudim.module').then(
+      import('./pages/pratim-nosafim/pratim-nosafim.module').then(
         (file) => file.LimuudimModule
       ),
   },

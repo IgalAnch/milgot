@@ -1,5 +1,6 @@
 <div class="pratim">
-    <form (ngSubmit)="onSubmit(c)" #c="ngForm">
+    <form (ngSubmit)="onSubmit2(c)" #c="ngForm">
+        
         <div class="_notice" [style.display]="noticeText">
             <div class="_notice__background"></div>
             <div class="_notice__text">
@@ -25,15 +26,26 @@
             <div class="right-first">
                 <div class="title">פרטים מזהים</div>
                 <div class="__wedge"></div>
-                <div class="form">
-                    <div class="texts">
-                        <div class="text">מספר זהות</div>
-                        <div class="text">שם פרטי</div>
-                        <div class="text">שם משפחה</div>
-                        <div class="text">שם משפחה קודם</div>
-                        <div class="text">שנת לידה</div>
+                <div class="form row">
+                    
+                    <div class="col-md-3 texts">
+                        <div class="text">
+                            <div class="text-content">מספר זהות</div>
+                        </div>
+                        <div class="text">
+                            <div class="text-content">שם פרטי</div>
+                        </div>
+                        <div class="text">
+                            <div class="text-content">שם משפחה</div>
+                        </div>
+                        <div class="text">
+                            <div class="text-content">שם משפחה קודם</div>
+                        </div>
+                        <div class="text">
+                            <div class="text-content">שנת לידה</div>
+                        </div>
                     </div>
-                    <div class="inputs">
+                    <div class="col-md-9 inputs">
                         <div class="input1">
                             <input value="" ngModel name="idNumber">
                         </div>
@@ -68,11 +80,14 @@
         <div class="content-second">
             <div class="right-second">
                 <div class="second__wedge"></div>
-                <div class="form">
-                    <div class="texts">
-                        <div class="text">מין הסטודנט</div>
+                <div class="form row">
+                    <div class="col-md-3 texts">
+                        <div class="text">
+                            <div class="text-content">מין הסטודנט</div>
+                        </div>
+                        
                     </div>
-                    <div class="inputs">
+                    <div class="col-md-9 inputs">
                         <div class="input1">
                             <input value="" ngModel name="gender">
                         </div>

@@ -21,9 +21,32 @@
                 <button class="save-and-continue" (click)="ok()">שמור והמשך</button>
             </div>
         </div>
-        <div class="content">
+        <div *ngFor="let col of wizard.documents; let co = index">
+            <div class="content">
+                <div class="right" style="height: 220px; padding-top: 90px; align-items: center;">
+                    <div class="form-group">
+                        <!-- <label for="file">Choose File</label> -->
+                        <div style="display: block; text-align: center; font-weight: bold; margin-left:80px; margin-bottom: 10px">Something</div>
+                        <input type="file" style="display: block; margin-left: auto; margin-right: auto;"
+                               id="file"
+                        >
+                               <!-- (change)="handleFileInput($event.target.files)"> -->
+                    </div>    
+                </div>
+                <div class="vertical-wedge"></div>
+                <div class="left" style="height: 220px; padding-top: 20px; padding-right: 10px;"> 
+                    <div class="title" style="font-weight:bold; font-size: 15px;">
+                        סטודנטים יקרים,
+                    </div>
+                    <div class="desc" style="font-size: 15px;">{{left_desc}}</div>
+                    <div class="desc" style="font-size: 15px;">{{left_desc2}}</div>
+                </div>
+            </div>
+            <div class="c-wedge"></div>
+        </div>
+
+        <!-- <div class="content">
             <div class="right" style="height: 220px;">
-                
             </div>
             <div class="vertical-wedge"></div>
             <div class="left" style="height: 220px;"> 
@@ -36,14 +59,6 @@
             <div class="vertical-wedge"></div>
             <div class="left" style="height: 220px;"> 
             </div>
-        </div>
-        <div class="c-wedge"></div>
-        <div class="content">
-            <div class="right" style="height: 220px;">
-            </div>
-            <div class="vertical-wedge"></div>
-            <div class="left" style="height: 220px;"> 
-            </div>
-        </div>
+        </div> -->
     </form>
 </div>
