@@ -34,15 +34,7 @@ function treeAdd() {}
   styleUrls: ['./pratim-nosafim.component.scss'],
 })
 export class PratimNosafimComponent implements OnInit {
-  constructor() {
-    //console.log(verb);
-    // console.log(aKnife);
-    // console.log(isExist(kKnife, aKnife));
-    // console.log(isExist(motor, verb));
-    /////
-    // console.log(isExist(scrapMetal, motor));
-    // varToString(motor);
-  }
+  constructor() {}
 
   noticeText = 'block';
   hidePopup() {
