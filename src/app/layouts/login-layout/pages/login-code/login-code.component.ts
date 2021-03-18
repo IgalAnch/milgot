@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Apollo, gql, APOLLO_OPTIONS } from 'apollo-angular';
 import { map, filter } from 'rxjs/operators';
+import { LoginLayoutService } from '../../login-layout.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,18 @@ import { map, filter } from 'rxjs/operators';
   styleUrls: ['./login-code.component.scss'],
 })
 export class LoginCodeComponent {
-  constructor(private apollo: Apollo) {}
+  constructor(
+    private apollo: Apollo,
+    private loginLayoutService: LoginLayoutService,
+    private router: Router
+  ) {
+    console.log('login_email= ');
+    console.log(loginLayoutService.login_email);
+
+    if (loginLayoutService.login_email == '') {
+      router.navigate(['login']);
+    }
+  }
 
   error = 'none';
   success = 'none';

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Apollo, gql, APOLLO_OPTIONS } from 'apollo-angular';
 import { map, filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { LoginLayoutService } from '../../login-layout.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,13 @@ import { map, filter } from 'rxjs/operators';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private apollo: Apollo) {}
+  constructor(
+    private apollo: Apollo,
+    private router: Router,
+    private loginLayoutService: LoginLayoutService
+  ) {
+    loginLayoutService.login_email = '';
+  }
 
   error = 'none';
   success = 'none';
@@ -45,10 +53,17 @@ export class LoginComponent {
           console.log(result);
           this.error = 'none';
           this.success = 'block';
+          this.loginLayoutService.login_email = vars.email;
+          setTimeout(() => {
+            this.router.navigate(['code']);
+          }, 1000);
         },
         (error) => {
           console.log('ERROR');
-          this.error = 'block';
+          this.error = 'none'; //reset before giving error. to imply subsequent input is incorrect
+          setTimeout(() => {
+            this.error = 'block';
+          }, 50);
         }
       );
   }
