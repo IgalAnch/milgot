@@ -20,4 +20,11 @@ export const LoginLayoutRoutes: Routes = [
         (file) => file.ContactUsModule
       ),
   },
+  {
+    path: 'code',
+    loadChildren: () =>
+      import('./pages/login-code/login-code.module').then(
+        (file) => file.LoginCodeModule
+      ),
+  },
 ];
