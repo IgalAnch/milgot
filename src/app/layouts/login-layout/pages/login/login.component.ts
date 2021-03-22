@@ -68,6 +68,7 @@ export class LoginComponent {
       );
   }
 
+  //mf,3rr,1dr,3ww,3wb,1sr,2kc,1sw,fg,md,cr,kt,sf;brd,rda,rrd,msd,scw,cd,bri
   ok() {
     console.log('2nd button'); //z
     let query2 = gql`
