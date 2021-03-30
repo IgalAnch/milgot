@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Apollo, gql, APOLLO_OPTIONS } from 'apollo-angular';
 import { map, filter } from 'rxjs/operators';
 import { AppComponent } from '../../../../app.component';
@@ -64,6 +64,47 @@ export class PratimComponent implements OnInit {
     this.apollo
       .mutate({ mutation: this.input_user, variables: user_vars })
       .subscribe((result) => {
+        console.log(result);
+      });
+  }
+
+  // input_random=gql`
+  //   GQL.IMutation.IUser
+  // `;
+
+  // input2=gql`
+  //   query GQL.IUserInput.user
+  // `;
+
+  sendQuery() {
+    let input2 = gql`
+      query IUserInput{
+       GQL.user
+      }
+    `;
+
+    let vars = {
+      user: {
+        id: 9,
+        idNumber: '45',
+        username: 'yigsdal',
+        firstName: 'joeyy',
+        lastName: 'wheelerr',
+        previousLastName: 'wheelur',
+        birthYear: 155,
+        gender: 'chad',
+      },
+    };
+    let ap = this.apollo
+      .watchQuery({
+        query: input2,
+        variables: vars,
+        fetchPolicy:
+          'network-only' /*for test purposes. this emits cache fetch*/,
+      })
+      .valueChanges.pipe(map((result: any) => result.data.user))
+      .subscribe((result) => {
+        console.log('result: ');
         console.log(result);
       });
   }
