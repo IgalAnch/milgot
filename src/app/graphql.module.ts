@@ -36,8 +36,26 @@ export function createApollo(httpLink: HttpLink) {
       };
     }
   });
+  const emailauth = setContext((operation, context) => {
+    const token = localStorage.getItem('emailtoken');
+    //asdasd
+    if (token === null) {
+      return {};
+    } else {
+      return {
+        headers: {
+          Authorization: `Bearer2 ${token}`,
+        },
+      };
+    }
+  });
 
-  const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
+  const link = ApolloLink.from([
+    basic,
+    auth,
+    emailauth,
+    httpLink.create({ uri }),
+  ]);
   const cache = new InMemoryCache();
 
   return {

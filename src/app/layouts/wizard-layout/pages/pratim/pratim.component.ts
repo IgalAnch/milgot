@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Apollo, gql, APOLLO_OPTIONS } from 'apollo-angular';
 import { map, filter } from 'rxjs/operators';
 import { AppComponent } from '../../../../app.component';
+import { ApolloQueryResult } from '@apollo/client/core';
 
 @Component({
   selector: 'app-pratim',
@@ -77,9 +78,15 @@ export class PratimComponent implements OnInit {
   // `;
 
   sendQuery() {
-    let input2 = gql`
-      query IUserInput{
-       GQL.user
+    let query = gql`
+      query($user: UserInput!) {
+        testObject2(user: $user) {
+          id
+          idNumber
+          username
+          email
+          password
+        }
       }
     `;
 
@@ -97,12 +104,12 @@ export class PratimComponent implements OnInit {
     };
     let ap = this.apollo
       .watchQuery({
-        query: input2,
+        query: query,
         variables: vars,
         fetchPolicy:
           'network-only' /*for test purposes. this emits cache fetch*/,
       })
-      .valueChanges.pipe(map((result: any) => result.data.user))
+      .valueChanges.pipe(map((result: any) => result.data))
       .subscribe((result) => {
         console.log('result: ');
         console.log(result);
