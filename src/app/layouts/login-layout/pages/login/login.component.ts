@@ -59,6 +59,7 @@ export class LoginComponent {
 
           this.error = 'none';
           this.success = 'block';
+
           this.loginLayoutService.login_email = vars.email;
           setTimeout(() => {
             this.router.navigate(['code']);
@@ -75,7 +76,7 @@ export class LoginComponent {
   }
 
   ok() {
-    console.log('2nd button'); //z
+    console.log('2nd test button'); //z
     let query2 = gql`
       query newTest($id: Int!) {
         user(id: $id) {
